@@ -3,3 +3,4 @@
 .rasa/
 # TODO: add dockerfile
 env_rasa2-8.yml
+__pycache__/
