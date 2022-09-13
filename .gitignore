@@ -1,0 +1,5 @@
+.config/
+.keras/
+.rasa/
+# TODO: add dockerfile
+env_rasa2-8.yml

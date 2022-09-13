@@ -1,0 +1,68 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - Olá
+    - Oi
+    - E aí
+    - Bom dia
+    - Boa tarde
+    - Boa noite
+
+- intent: pedir_pizza
+  examples: |
+    - Gostaria de pedir uma pizza
+    - Eu quero uma pizza
+    - Estou com fome
+    - Quero pizza
+    - Vou querer uma pizza de [atum](sabor)
+    - Quero uma pizza [pequena](tamanho) de [atum](sabor)
+    - Gostaria de uma pizza [grande](tamanho)
+    - Me vê uma pizza [média](tamanho) de [calabresa](sabor)
+    - Pizza [media](tamanho) de [frango](sabor)
+
+- intent: lista_sabores
+  examples: |
+    - Quais sabores tem?
+    - Quais são os sabores disponíveis?
+    - Tem pizza de que?
+    - Tem pizza de [frango](sabor)?
+    - Tem de [atum](sabor)?
+    - Quero uma lista de sabores
+  
+- intent: lista_tamanhos
+  examples: |
+    - Quais tamanhos de pizza tem?
+    - Tem pizza de que tamanho?
+    - Quais tipos de pizza estão disponíveis?
+    - Quero uma lista de tamanhos
+
+- intent: define_tamanho
+  examples: |
+    - [Pequena](tamanho)
+    - Pode ser uma [média](tamanho)
+    - Vou querer a [grande](tamanho)
+    - Quero uma pizza de [atum](sabor)
+    - Pizza [media](tamanho)
+
+- intent: define_sabor
+  examples: |
+    - Quero de [calabresa](sabor)
+    - [Atum](sabor)
+    - Pode ser [frango](sabor)
+    - Quero uma pizza de [atum](sabor)
+  
+- intent: agradecimento
+  examples: |
+    - Obrigado
+    - Vlw
+    - Muito obrigado
+
+- intent: despedida
+  examples: |
+    - Tchau
+    - Até mais
+    - Falou
+    - Flw
+    - Até a próxima

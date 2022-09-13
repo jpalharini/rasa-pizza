@@ -1,0 +1,53 @@
+version: "3.1"
+
+intents:
+- saudacao
+- pedir_pizza
+- lista_sabores
+- lista_tamanhos
+- define_tamanho
+- define_sabor
+- agradecimento
+- despedida
+
+entities:
+- tamanho
+- sabor
+
+responses:
+  utter_saudacao:
+  - text: Olá! Bem-vindo à Atitus Pizza. Posso anotar seu pedido?
+  utter_lista_sabores:
+  - text: 'Temos três sabores: Calabresa, Frango e Atum.'
+  utter_lista_tamanhos:
+  - text: Trabalhamos com pizzas de tamanho pequeno, medio e grande.
+  utter_confirmacao:
+  - text: Certo. Vamos preparar sua pizza {tamanho} de {sabor}. Te aviso quando ela sair para entrega!
+  utter_agradecimento:
+  - text: Imagina, é um prazer atendê-lo
+  utter_ask_tamanho:
+  - text: Qual tamanho de pizza você deseja?
+  utter_tamanho:
+  - text: Ok! Uma pizza {tamanho}.
+  utter_ask_sabor:
+  - text: Qual sabor?
+  utter_sabor:
+  - text: Pizza de {sabor}. Ótima escolha!
+  utter_despedida:
+  - text: Tchau! Até a próxima! ;)
+
+slots:
+  tamanho:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: tamanho
+  sabor:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: sabor
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

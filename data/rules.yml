@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: responde a saudacao
+  steps:
+  - intent: saudacao
+  - action: utter_saudacao
+
+- rule: responde ao agradecimento
+  steps:
+  - intent: agradecimento
+  - action: utter_agradecimento
+
+- rule: se despede
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: informar tamanhos
+  steps:
+  - intent: lista_tamanhos
+  - action: utter_lista_tamanhos
+
+- rule: informar sabores
+  steps:
+  - intent: lista_sabores
+  - action: utter_lista_sabores

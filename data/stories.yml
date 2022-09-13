@@ -1,0 +1,48 @@
+version: "3.1"
+
+stories:
+
+- story: pedido completo
+  steps:
+  - intent: pedir_pizza
+  - slot_was_set:
+    - sabor: true
+    - tamanho: true
+  - action: utter_confirmacao
+
+- story: pedido com tamanho
+  steps:
+  - intent: pedir_pizza
+  - slot_was_set:
+    - tamanho: true
+  - action: utter_ask_sabor
+  - intent: define_sabor
+  - slot_was_set:
+    - sabor: true
+  - action: utter_sabor
+  - action: utter_confirmacao
+
+- story: pedido com sabor
+  steps:
+  - intent: pedir_pizza
+  - slot_was_set:
+    - sabor: true
+  - action: utter_ask_tamanho
+  - intent: define_tamanho
+  - action: utter_tamanho
+  - action: utter_confirmacao
+
+- story: pedido sem preferencias
+  steps:
+  - intent: pedir_pizza
+  - action: utter_ask_sabor
+  - intent: define_sabor
+  - slot_was_set:
+    - sabor: true
+  - action: utter_sabor
+  - action: utter_ask_tamanho
+  - intent: define_tamanho
+  - slot_was_set:
+    - tamanho: true
+  - action: utter_tamanho
+  - action: utter_confirmacao
